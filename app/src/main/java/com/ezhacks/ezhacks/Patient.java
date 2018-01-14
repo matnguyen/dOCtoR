@@ -4,6 +4,7 @@ package com.ezhacks.ezhacks;
  * Created by raiya on 2018-01-13.
  */
 
+import java.util.Date;
 
 @Entity(tableName = "patients")
 public class Patient {
