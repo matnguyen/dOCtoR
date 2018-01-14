@@ -5,6 +5,10 @@ package com.ezhacks.ezhacks;
  */
 
 import java.util.Date;
+import java.util.UUID;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.ColumnInfo;
 
 @Entity(tableName = "patients")
 public class Patient {
