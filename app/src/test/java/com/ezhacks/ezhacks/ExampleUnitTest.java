@@ -18,9 +18,6 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
     public void json_test() throws Exception {
         String json_string = "{\n" +
                 "  \"First name\": \"John\",\n" +
@@ -30,7 +27,7 @@ public class ExampleUnitTest {
                 "  \"Province\": \"BC\",\n" +
                 "  \"Postal code\": \"V3J 4L5\",\n" +
                 "  \"Date of birth\": \"14 March 1996\",\n" +
-                "  \"Gender\": \"male\",\n" +
+                "  \"Gender\": \"all of the above\",\n" +
                 "  \"Care card number\": \"12345\",\n" +
                 "  \"Phone number\": \"604-446-1780\",\n" +
                 "  \"Weight\": \"60\",\n" +
@@ -41,5 +38,6 @@ public class ExampleUnitTest {
                 "}";
         JSONObject json = new JSONObject(json_string);
         Map<String,String> medical_records = JSON_Parser.main(json);
+        assertEquals(medical_records.get("Gender"), "all of the above");
     }
 }
