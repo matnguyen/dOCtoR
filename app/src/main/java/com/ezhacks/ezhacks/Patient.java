@@ -19,7 +19,7 @@ public class Patient {
     private String pid;
 
     @ColumnInfo(name = "care_card")
-    private String careCard;
+    private Integer careCard;
 
     @ColumnInfo(name = "first_name")
     private String firstName;
@@ -28,7 +28,7 @@ public class Patient {
     private String lastName;
 
     // Constructor
-    public Patient(String careCard, String firstName, String lastName) {
+    public Patient(Integer careCard, String firstName, String lastName) {
         this.pid = UUID.randomUUID().toString();
         this.careCard = careCard;
         this.firstName = firstName;
@@ -37,7 +37,7 @@ public class Patient {
 
     // Getters and setters
 
-    public String getCareCard() {
+    public Integer getCareCard() {
         return this.careCard;
     }
 
@@ -53,7 +53,7 @@ public class Patient {
         return this.pid;
     }
 
-    public void setCareCard(String careCard) {
+    public void setCareCard(Integer careCard) {
         this.careCard = careCard;
     }
 

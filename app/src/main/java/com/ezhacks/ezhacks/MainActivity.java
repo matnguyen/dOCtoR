@@ -8,7 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.util.Log;
 import android.arch.persistence.room.Room;
+import com.ezhacks.ezhacks.PatientDao;
+import com.ezhacks.ezhacks.PatientDaoImpl;
+import android.arch.persistence.room.Dao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,7 +56,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // get instance of database
-    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-            AppDatabase.class, "patients").build();
+    public static void dbSetup() {
+        // get instance of database
+        // AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        // AppDatabase.class, "patients").build();
+        PatientDao patientDao = new PatientDaoImpl();
+
+        // create new patient
+        Patient newPatient = new Patient(12345, "Raiya", "Jessa");
+
+        // insert patient into 'patients' table
+        patientDao.insert(newPatient);
+
+        // query the db
+        Patient res = patientDao.findByCareCard(12345);
+        Log.d("Patient care card: ", res.getCareCard().toString());
+    }
+
 }

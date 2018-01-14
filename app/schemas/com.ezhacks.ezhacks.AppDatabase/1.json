@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6e80354bff74bf97808063370ac5bdc1",
+    "identityHash": "8bbeb5dc3966a336536b2918e87b7233",
     "entities": [
       {
         "tableName": "patients",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`patient_id` TEXT NOT NULL, `care_card` TEXT, `first_name` TEXT, `last_name` TEXT, PRIMARY KEY(`patient_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`patient_id` TEXT NOT NULL, `care_card` INTEGER, `first_name` TEXT, `last_name` TEXT, PRIMARY KEY(`patient_id`))",
         "fields": [
           {
             "fieldPath": "pid",
@@ -17,7 +17,7 @@
           {
             "fieldPath": "careCard",
             "columnName": "care_card",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": false
           },
           {
@@ -45,7 +45,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6e80354bff74bf97808063370ac5bdc1\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"8bbeb5dc3966a336536b2918e87b7233\")"
     ]
   }
 }

@@ -15,12 +15,11 @@ public interface PatientDao {
     @Query("SELECT * FROM patients")
     List<Patient> getAll();
 
-    @Query("SELECT * FROM patients WHERE first_name LIKE :first AND "
-            + "last_name LIKE :last LIMIT 1")
-    Patient findByName(String first, String last);
+    @Query("SELECT * FROM patients WHERE care_card LIKE :careCard LIMIT 1")
+    Patient findByCareCard(Integer careCard);
 
     @Insert
-    void insertAll(Patient... patients);
+    void insert(Patient patient);
 
     @Delete
     void delete(Patient patient);
