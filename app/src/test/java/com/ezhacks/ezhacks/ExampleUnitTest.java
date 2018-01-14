@@ -20,24 +20,70 @@ public class ExampleUnitTest {
     @Test
     public void json_test() throws Exception {
         String json_string = "{\n" +
-                "  \"First name\": \"John\",\n" +
-                "  \"Last name\": \"Smith\",\n" +
-                "  \"Address\": \"770 Sproule Avenue\",\n" +
-                "  \"City\": \"Coquitlam\",\n" +
-                "  \"Province\": \"BC\",\n" +
-                "  \"Postal code\": \"V3J 4L5\",\n" +
-                "  \"Date of birth\": \"14 March 1996\",\n" +
-                "  \"Gender\": \"all of the above\",\n" +
-                "  \"Care card number\": \"12345\",\n" +
-                "  \"Phone number\": \"604-446-1780\",\n" +
-                "  \"Weight\": \"60\",\n" +
-                "  \"Height\": \"6\",\n" +
-                "  \"Heart rate\": \"60\",\n" +
-                "  \"Blood pressure\": \"120/60\",\n" +
-                "  \"Body temperature\": \"96\",\n" +
+                "\"language\": \"en\",\n" +
+                "\"textAngle\": -2.0000000000000338,\n" +
+                "\"orientation\": \"Up\",\n" +
+                "\"regions\": [\n" +
+                "{\n" +
+                "\"boundingBox\": \"462,379,497,258\",\n" +
+                "\"lines\": [\n" +
+                "{\n" +
+                "\"boundingBox\": \"462,379,497,74\",\n" +
+                "\"words\": [\n" +
+                "{\n" +
+                "\"boundingBox\": \"462,379,41,73\",\n" +
+                "\"text\": \"A\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"523,379,153,73\",\n" +
+                "\"text\": \"GOAL\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"694,379,265,74\",\n" +
+                "\"text\": \"WITHOUT\"\n" +
+                "}\n" +
+                "]\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"565,471,289,74\",\n" +
+                "\"words\": [\n" +
+                "{\n" +
+                "\"boundingBox\": \"565,471,41,73\",\n" +
+                "\"text\": \"A\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"626,471,150,73\",\n" +
+                "\"text\": \"PLAN\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"801,472,53,73\",\n" +
+                "\"text\": \"IS\"\n" +
+                "}\n" +
+                "]\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"519,563,375,74\",\n" +
+                "\"words\": [\n" +
+                "{\n" +
+                "\"boundingBox\": \"519,563,149,74\",\n" +
+                "\"text\": \"JUST\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"683,564,41,72\",\n" +
+                "\"text\": \"A\"\n" +
+                "},\n" +
+                "{\n" +
+                "\"boundingBox\": \"741,564,153,73\",\n" +
+                "\"text\": \"WISH\"\n" +
+                "}\n" +
+                "]\n" +
+                "}\n" +
+                "]\n" +
+                "}\n" +
+                "]\n" +
                 "}";
         JSONObject json = new JSONObject(json_string);
         Map<String,String> medical_records = JSON_Parser.main(json);
-        assertEquals(medical_records.get("Gender"), "all of the above");
+        System.out.println(medical_records);
     }
 }
