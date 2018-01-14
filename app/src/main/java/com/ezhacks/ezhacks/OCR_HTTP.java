@@ -4,6 +4,7 @@ package com.ezhacks.ezhacks;
  * Created by Matthew on 13/01/18.
  */
 
+import android.os.AsyncTask;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -72,6 +73,7 @@ public class OCR_HTTP {
 
             // Execute the REST API call and get the response entity.
             HttpResponse response = httpClient.execute(request);
+            System.out.println("http request executed\n");
             HttpEntity entity = response.getEntity();
             System.out.println("Executed REST API\n");
 
@@ -92,6 +94,17 @@ public class OCR_HTTP {
         {
             // Display error message.
             System.out.println(e.getMessage());
+        }
+    }
+
+    static class OCR_request extends AsyncTask<Void, Void, String> {
+        protected String doInBackground(Void... args) {
+            OCR();
+            return "";
+        }
+
+        protected void onPostExecute(String temp) {
+            System.out.println("OCR complete\n");
         }
     }
 }

@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
                 System.out.println("Testing OCR\n");
                 OCR_HTTP test_OCR = new OCR_HTTP();
-                test_OCR.OCR();
+//                test_OCR.OCR();
+                new OCR_HTTP.OCR_request().execute();
             }
         });
     }
