@@ -41,6 +41,7 @@
     </RelativeLayout>
 
     <GridLayout
+        android:id="@+id/picview"
         android:columnCount="2"
         android:rowCount="3"
         android:alignmentMode="alignMargins"
@@ -55,6 +56,7 @@
 
         <!-- Column 1-->
         <android.support.v7.widget.CardView
+            android:id="@+id/Capture_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -62,6 +64,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_rowWeight="1"
+            android:clickable="true"
+            android:onClick="CapturePic"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
