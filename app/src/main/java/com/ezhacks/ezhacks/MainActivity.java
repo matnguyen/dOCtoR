@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.arch.persistence.room.Room;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,4 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    // get instance of database
+    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+            AppDatabase.class, "patients").build();
 }
